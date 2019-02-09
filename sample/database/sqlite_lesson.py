@@ -1,3 +1,7 @@
+"""
+SQLite Databaseを使う.
+"""
+
 import sqlite3
 
 conn = sqlite3.connect('sqlite_lesson.db')

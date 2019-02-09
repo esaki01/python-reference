@@ -1,3 +1,7 @@
+"""
+SQLAlchemyを使う.
+"""
+
 import sqlalchemy.ext.declarative
 import sqlalchemy.orm
 

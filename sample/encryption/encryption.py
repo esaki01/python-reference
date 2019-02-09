@@ -1,3 +1,7 @@
+"""
+暗号化処理.
+"""
+
 import base64
 import os
 import hashlib

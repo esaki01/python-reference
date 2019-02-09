@@ -1,10 +1,13 @@
+"""
+並列化処理.
+"""
+
 import logging
 import threading
 import time
 
 
-logging.basicConfig(
-    level=logging.DEBUG, format='%(threadName)s: %(message)s')
+logging.basicConfig(level=logging.DEBUG, format='%(threadName)s: %(message)s')
 
 
 def worker1():

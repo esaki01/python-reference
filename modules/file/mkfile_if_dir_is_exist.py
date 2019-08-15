@@ -7,7 +7,7 @@ from random import randint
 
 # 保存フォルダとファイルパス
 folder = './data/'
-file = folder + 'sample.txt'
+file = folder + 'modules.txt'
 
 
 def filewrite():

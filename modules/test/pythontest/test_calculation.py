@@ -8,7 +8,7 @@ sys.path.append(r'C:\environment\workspace\portfolio\python-reference')
 
 import pytest
 
-from sample.test.pythontest import calculation
+from modules.test.pythontest import calculation
 
 release_name = 'lesson'
 

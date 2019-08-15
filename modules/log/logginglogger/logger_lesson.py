@@ -6,7 +6,7 @@ import sys
 sys.path.append(r'C:\environment\workspace\portfolio\python-reference')
 import logging
 
-from sample.log.logginglogger import logger_lesson2
+from modules.log.logginglogger import logger_lesson2
 
 # フォーマットを定義
 formatter = '%(levelname)s : %(asctime)s : %(message)s'

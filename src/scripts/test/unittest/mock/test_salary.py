@@ -2,7 +2,7 @@ import unittest
 from unittest import mock
 from unittest.mock import MagicMock
 
-from scripts.test.mock import salary
+from scripts.test.unittest.mock import salary
 
 
 class TestSalary(unittest.TestCase):
@@ -25,7 +25,7 @@ class TestSalary(unittest.TestCase):
         s.bonus_api.bonus_price.assert_not_called()  # BonusApiが呼ばれていないことを確認
 
     # MagicMockなしでデコレータで書ける
-    @mock.patch('scripts.test.mock.salary.BonusApi.bonus_price')
+    @mock.patch('scripts.test.unittest.mock.salary.BonusApi.bonus_price')
     def test_calculate_salary_patch(self, mock_bonus_price):
         mock_bonus_price.return_value = 1  # 仮の値を返してくれる
 
@@ -38,7 +38,7 @@ class TestSalary(unittest.TestCase):
     """
     デコレータなしでこのようにも書ける.
     def setUp(self):
-        self.patcher = mock.patch('modules.test.mock.salary.BonusApi.bonus_price')
+        self.patcher = mock.patch('scripts.test.unittest.mock.salary.BonusApi.bonus_price')
         self.mock_bonus_price = self.patcher.start()
 
     def tearDown(self):
@@ -55,7 +55,7 @@ class TestSalary(unittest.TestCase):
     """
 
     # 仮の値を固定値にせず条件を付けたい場合
-    @mock.patch('scripts.test.mock.salary.BonusApi.bonus_price')
+    @mock.patch('scripts.test.unittest.mock.salary.BonusApi.bonus_price')
     def test_calculate_salary_side_effect(self, mock_bonus_price):
         mock_bonus_price.side_effect = lambda year: 1 if year < 2020 else 0  # side_effect=return_valueに条件式付けたもの
 
@@ -66,7 +66,7 @@ class TestSalary(unittest.TestCase):
         mock_bonus_price.assert_called()
 
     # 仮の値を例外にしたい場合
-    @mock.patch('scripts.test.mock.salary.BonusApi.bonus_price')
+    @mock.patch('scripts.test.unittest.mock.salary.BonusApi.bonus_price')
     def test_calculate_salary_side_effect_exception(self, mock_bonus_price):
         mock_bonus_price.side_effect = ConnectionRefusedError  # side_effectには例外も指定できる
 
@@ -77,7 +77,7 @@ class TestSalary(unittest.TestCase):
         mock_bonus_price.assert_called()
 
     # クラスごとMockする
-    @mock.patch('scripts.test.mock.salary.BonusApi', spec=True)
+    @mock.patch('scripts.test.unittest.mock.salary.BonusApi', spec=True)
     def test_calculate_salary_class(self, mock_bonus_api):
         mock_bonus_api = mock_bonus_api.return_value
         mock_bonus_api.bonus_price.return_value = 1

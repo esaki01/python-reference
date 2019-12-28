@@ -4,7 +4,7 @@ unittest: method名は、test～ にすることに注意.
 
 import unittest
 
-from modules.test.unittest import calculation
+from scripts.test.unittest import calculation
 
 release_name = 'lesson'
 

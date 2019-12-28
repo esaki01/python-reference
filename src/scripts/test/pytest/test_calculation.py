@@ -3,12 +3,10 @@ pytest: 実行コマンド -> pytest test_calculation.py --cov=calculation --cov
 """
 
 import os
-import sys
-sys.path.append(r'C:\environment\workspace\portfolio\python-reference')
 
 import pytest
 
-from modules.test.pythontest import calculation
+from scripts.test.pytest import calculation
 
 release_name = 'lesson'
 

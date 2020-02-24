@@ -1,24 +1,24 @@
 """
-並行処理.
+並行処理（マルチスレッド）より簡単に実装できる.
 """
 
-import time
 import concurrent.futures
+import logging
+
+logging.basicConfig(level=logging.DEBUG, format='%(threadName)s: %(message)s')
 
 
-def func1():
-    while True:
-        print("func1")
-        time.sleep(1)
-
-
-def func2():
-    while True:
-        print("func2")
-        time.sleep(1)
+def worker(x, y):
+    logging.debug('start')
+    r = x * y
+    logging.debug(r)
+    logging.debug('end')
+    return r
 
 
 if __name__ == "__main__":
-    executor = concurrent.futures.ThreadPoolExecutor(max_workers=2)
-    executor.submit(func1)
-    executor.submit(func2)
+    with concurrent.futures.ThreadPoolExecutor(max_workers=3) as executor:
+        f1 = executor.submit(worker, 2, 5)
+        f2 = executor.submit(worker, 2, 5)
+        logging.debug(f1.result())
+        logging.debug(f2.result())

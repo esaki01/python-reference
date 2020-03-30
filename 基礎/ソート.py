@@ -31,5 +31,3 @@ size_list = ['XS', 'S', 'M', 'L']
 data = ['S', 'M', 'XS', 'L', 'M', 'M', 'XS', 'S', 'M', 'L', 'M']
 data.sort(key=lambda item: size_list.index(item))
 print(data)
-
-

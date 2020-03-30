@@ -6,7 +6,7 @@ import os
 
 import pytest
 
-from scripts.test.pytest import calculation
+from テスト.pytest import calculation
 
 release_name = 'lesson'
 

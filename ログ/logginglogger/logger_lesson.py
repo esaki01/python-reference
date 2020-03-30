@@ -2,11 +2,9 @@
 ロギング ロガー.
 基本設定を引き継いで、特定の処理にだけログの設定を変更することができる仕組み.
 """
-import sys
-sys.path.append(r'C:\environment\workspace\portfolio\python-reference')
 import logging
 
-from scripts.log.logginglogger import logger_lesson2
+from ログ.logginglogger import logger_lesson2
 
 # フォーマットを定義
 formatter = '%(levelname)s : %(asctime)s : %(message)s'

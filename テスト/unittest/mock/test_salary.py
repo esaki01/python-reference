@@ -2,7 +2,7 @@ import unittest
 from unittest import mock
 from unittest.mock import MagicMock
 
-from scripts.test.unittest.mock import salary
+from テスト.unittest.mock import salary
 
 
 class TestSalary(unittest.TestCase):
